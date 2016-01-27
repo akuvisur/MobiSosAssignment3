@@ -18,7 +18,7 @@ public class CalendarService extends IntentService {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    protected void onHandleIntent(Intent intent) {
         // this method is called when the service starts
         Log.d(LOG, "running");
 
@@ -37,13 +37,7 @@ public class CalendarService extends IntentService {
             Don't query all calendars! (test first to see which ones you want)
 
         */
-
-        // the service will be killed when the app closes
-        return START_NOT_STICKY;
     }
-
-    @Override
-    protected void onHandleIntent(Intent intent) {}
 
 
 }
